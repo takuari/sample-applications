@@ -27,7 +27,7 @@ sudo apt-get update
 sudo apt-get -y install git
 
 # Install nvm dependencies
-sudo apt-get -y install build-essential libssl-dev
+sudo apt-get -y install build-essential libssl-dev curl
 
 # Execute nvm installation script
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
@@ -60,7 +60,7 @@ sudo apt-key adv \
                --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
 # Update where APT will search for Docker Packages
-echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list
+echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
 
 # Update package lists
 sudo apt-get update
@@ -72,7 +72,7 @@ sudo apt-cache policy docker-engine
 sudo apt-get -y install linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 # Install docker-engine
-sudo apt-get -y install docker-engine=1.12.3-0~trusty
+sudo apt-get -y install docker-engine
 
 # Modify user account
 sudo usermod -aG docker $(whoami)
